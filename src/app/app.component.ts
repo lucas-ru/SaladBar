@@ -9,7 +9,7 @@ export class AppComponent {
     { title: 'Accueil', url: '/folder/Accueil', icon: 'home' },
     { title: 'Ma salade', url: '/folder/Salade', icon: 'fast-food' },
     { title: 'Scanner mon QRCode', url: '/folder/QrCode', icon: 'qr-code' },
+    { title: 'Panier', url: '/folder/Panier', icon: 'cart' },
   ];
-  // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
 }

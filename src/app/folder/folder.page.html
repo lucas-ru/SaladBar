@@ -14,6 +14,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+  <div id="container" >
+    <div *ngIf="isQrCode">
+      <ngx-scanner-qrcode #action="scanner" (data)="output = $event"></ngx-scanner-qrcode>
+      <span>{{output}}</span>
+      <button (click)="action.toggleCamera()" [disabled]="action.isLoading">{{action.isStart ? 'Stop' : 'Start'}}</button>
+    </div>
+    <div *ngIf="isAccueil">
+      <app-salade></app-salade>
+    </div>
   </div>
 </ion-content>
