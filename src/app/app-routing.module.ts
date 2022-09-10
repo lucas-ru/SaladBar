@@ -1,15 +1,28 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Accueil',
+    redirectTo: 'Accueil',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'Accueil',
+    loadChildren: () => import('./views/Accueil/accueil.module').then( m => m.AccueilPageModule)
+  },
+  {
+    path: 'Panier',
+    loadChildren: () => import('./views/Panier/panier.module').then( m => m.PanierPageModule)
+  },
+  {
+    path: 'QrCode',
+    loadChildren: () => import('./views/QrCode/qrcode.module').then( m => m.QrCodePageModule)
+  },
+  {
+    path: 'Salade',
+    loadChildren: () => import('./views/Salade/salade.module').then( m => m.SaladePageModule)
   }
 ];
 

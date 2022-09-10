@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AccueilPageRoutingModule } from './accueil-routing.module';
-import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 
 import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
@@ -23,4 +22,4 @@ import { AccueilPage } from './accueil.page';
   ],
   declarations: [AccueilPage,MySaladeComponent]
 })
-export class FolderPageModule {}
+export class AccueilPageModule {}

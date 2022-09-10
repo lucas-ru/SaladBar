@@ -3,13 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.page.html',
-  styleUrls: ['./accueil.page.scss'],
+  selector: 'app-qrcode',
+  templateUrl: './qrcode.page.html',
+  styleUrls: ['./qrcode.page.scss'],
 })
-export class AccueilPage implements OnInit {
-
-
+export class QrCodePage implements OnInit {
+  public output;
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {}
