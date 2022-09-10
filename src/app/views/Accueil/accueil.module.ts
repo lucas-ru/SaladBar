@@ -4,24 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { AccueilPageRoutingModule } from './accueil-routing.module';
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 
 import { StoreModule } from '@ngrx/store';
-import { saladeReducer } from '../reducers/salade.reducer';
-import { MySaladeComponent } from '../models/salade.component';
+import { saladeReducer } from '../../reducers/salade.reducer';
+import { MySaladeComponent } from '../../models/salade.component';
 
-import { FolderPage } from './folder.page';
+import { AccueilPage } from './accueil.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule,
-    NgxScannerQrcodeModule,
+    AccueilPageRoutingModule,
     StoreModule.forRoot({ salade: saladeReducer })
   ],
-  declarations: [FolderPage,MySaladeComponent]
+  declarations: [AccueilPage,MySaladeComponent]
 })
 export class FolderPageModule {}
