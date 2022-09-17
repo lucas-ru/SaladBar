@@ -9,7 +9,6 @@ import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 
 import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
-import { MySaladeComponent } from '../../models/salade.component';
 
 import { QrCodePage } from './qrcode.page';
 
@@ -22,6 +21,6 @@ import { QrCodePage } from './qrcode.page';
     NgxScannerQrcodeModule,
     StoreModule.forRoot({ salade: saladeReducer })
   ],
-  declarations: [QrCodePage,MySaladeComponent]
+  declarations: [QrCodePage]
 })
 export class QrCodePageModule {}

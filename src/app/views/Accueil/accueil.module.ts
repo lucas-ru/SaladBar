@@ -8,9 +8,9 @@ import { AccueilPageRoutingModule } from './accueil-routing.module';
 
 import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
-import { MySaladeComponent } from '../../models/salade.component';
 
 import { AccueilPage } from './accueil.page';
+import {SaladModule} from "../../models/salade.module";
 
 @NgModule({
   imports: [
@@ -18,8 +18,9 @@ import { AccueilPage } from './accueil.page';
     FormsModule,
     IonicModule,
     AccueilPageRoutingModule,
-    StoreModule.forRoot({ salade: saladeReducer })
+    StoreModule.forRoot({salade: saladeReducer}),
+    SaladModule
   ],
-  declarations: [AccueilPage,MySaladeComponent]
+  declarations: [AccueilPage]
 })
 export class AccueilPageModule {}

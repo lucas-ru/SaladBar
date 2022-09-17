@@ -1,7 +1,19 @@
-<button (click)="increment()">Increment</button>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>Nom: {{ nom$ }}</h1>
+      <h3>
+        <span class="badge badge-success">{{prix$ }}</span>
+      </h3>
+      <ul>
+        <li *ngFor="let ingredient of ingredients$ ">
+          <span class="badge badge-success">{{ ingredient.name }} : {{ ingredient.price }}$</span>
+        </li>
+      </ul>
+      <h4>Sauce: {{ sauce$ }}</h4>
+      <h4>Reduction: {{ reduction$ }}</h4>
+    </div>
 
-<div>Current Count: {{ count$ }}</div>
-
-<button (click)="decrement()">Decrement</button>
-
-<button (click)="reset()">Reset Counter</button>
+    <hr />
+  </div>
+</div>

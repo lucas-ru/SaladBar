@@ -8,7 +8,6 @@ import { SaladePageRoutingModule } from './salade-routing.module';
 
 import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
-import { MySaladeComponent } from '../../models/salade.component';
 
 import { SaladePage } from './salade.page';
 
@@ -20,6 +19,6 @@ import { SaladePage } from './salade.page';
     SaladePageRoutingModule,
     StoreModule.forRoot({ salade: saladeReducer })
   ],
-  declarations: [SaladePage,MySaladeComponent]
+  declarations: [SaladePage]
 })
 export class SaladePageModule {}

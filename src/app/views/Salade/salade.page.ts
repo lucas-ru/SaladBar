@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-salade',
+  selector: 'app-saladeviews',
   templateUrl: './salade.page.html',
   styleUrls: ['./salade.page.scss'],
 })

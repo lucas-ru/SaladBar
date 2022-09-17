@@ -8,7 +8,6 @@ import { PanierPageRoutingModule } from './panier-routing.module';
 
 import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
-import { MySaladeComponent } from '../../models/salade.component';
 
 import { PanierPage } from './panier.page';
 
@@ -20,6 +19,6 @@ import { PanierPage } from './panier.page';
     PanierPageRoutingModule,
     StoreModule.forRoot({ salade: saladeReducer })
   ],
-  declarations: [PanierPage,MySaladeComponent]
+  declarations: [PanierPage]
 })
 export class PanierPageModule {}
