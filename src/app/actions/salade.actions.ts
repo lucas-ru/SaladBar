@@ -5,12 +5,17 @@ export const decrement = createAction('[salade] Decrement');
 export const reset = createAction('[salade] Reset');
 
 export enum MyActionType {
+  StartApp = '[salade] start App',
   AddIng = '[salade] Ajouter Ing',
   DeleteIng = '[salade] Supprimer Ing',
   ModifySauce = '[salade] modifier sauce',
   ModifyPrice = '[salade] modifier Prix',
   ModifyName = '[salade] modifier nom',
   ModifyReduc = '[salade] modifier reduction'
+}
+
+export class StartApp implements Action{
+  readonly type = MyActionType.StartApp;
 }
 
 export class AddIng implements Action{
@@ -43,4 +48,4 @@ export class ModifyReduc {
   }
 }
 
-export type MyAction = AddIng | ModifySauce | ModifyPrice | ModifyName | ModifyReduc;
+export type MyAction = StartApp | AddIng | ModifySauce | ModifyPrice | ModifyName | ModifyReduc;

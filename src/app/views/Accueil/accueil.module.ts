@@ -10,7 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
 
 import { AccueilPage } from './accueil.page';
-import {SaladModule} from "../../models/salade.module";
+import {SaladModule} from "../../StateElement/salade.module";
 
 @NgModule({
   imports: [

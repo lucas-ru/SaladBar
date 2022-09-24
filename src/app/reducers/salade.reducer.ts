@@ -1,7 +1,7 @@
-import {createFeatureSelector, createSelector} from '@ngrx/store';
+import {ActionReducer, createFeatureSelector, createReducer, createSelector} from '@ngrx/store';
 import {MyAction, MyActionType} from '../actions/salade.actions';
 
-export class SaladeState {
+export interface Salade {
   id: number;
   nom: string;
   prix: number;
@@ -10,7 +10,7 @@ export class SaladeState {
   reduction: number;
 }
 
-const initialState: SaladeState = {
+const initialState: Salade = {
   id: 1,
   nom: 'Printanière',
   prix: 11.99,
@@ -19,8 +19,24 @@ const initialState: SaladeState = {
   reduction: 0
 };
 
-export function saladeReducer(state: SaladeState = initialState, action: MyAction): SaladeState {
+// console.log
+export function logger(reducer: ActionReducer<Salade>): ActionReducer<Salade> {
+  return (state, action) => {
+    const result = reducer(state, action);
+    console.groupCollapsed(action.type);
+    console.log('prev state', state);
+    console.log('action', action);
+    console.log('next state', result);
+    console.groupEnd();
+
+    return result;
+  };
+}
+
+export function saladeReducer(state: Salade = initialState, action: MyAction): Salade {
   switch (action.type){
+    case MyActionType.StartApp:
+      return {...initialState};
     case MyActionType.AddIng:
       const ingredients = [...state.ingredients, action.ing];
       return {
@@ -57,8 +73,11 @@ export function saladeReducer(state: SaladeState = initialState, action: MyActio
 //on(decrement, (state) => state - 1),
 //on(reset, (state) => 0)
 
-export const selectFeature = createFeatureSelector<any>('salade');
-export const selectFeatureCount = createSelector(
+export const selectFeature = createFeatureSelector<Salade>('salade');
+export const selectSalade = createSelector(
   selectFeature,
-  (state: SaladeState) => state.id
+  (salade) => {
+    console.log(salade)
+    return salade
+  }
 );

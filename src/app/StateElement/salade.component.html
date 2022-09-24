@@ -3,17 +3,19 @@
     <div class="col-6">
       <h1>Nom: {{ nom$ }}</h1>
       <h3>
-        <span class="badge badge-success">{{prix$ }}</span>
+        <span class="badge badge-success">Prix : {{ prix$  }}</span>
       </h3>
       <ul>
         <li *ngFor="let ingredient of ingredients$ ">
           <span class="badge badge-success">{{ ingredient.name }} : {{ ingredient.price }}$</span>
         </li>
       </ul>
-      <h4>Sauce: {{ sauce$ }}</h4>
-      <h4>Reduction: {{ reduction$ }}</h4>
+      <h4>Sauce: {{ sauce$  }}</h4>
+      <h4>Reduction: {{ reduction$  }}</h4>
     </div>
-
+    <div>
+      {{ salade$ }}
+    </div>
     <hr />
   </div>
 </div>

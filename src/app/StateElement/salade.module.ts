@@ -4,13 +4,17 @@ import { Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { MySaladeComponent } from './salade.component';
 import { saladeReducer } from '../reducers/salade.reducer';
+import {EffectsModule} from '@ngrx/effects';
+//import { SaladeEffect } from '../StateElement/salade.effect';
 
 const routes: Routes = [
   // { path: 'order', component: SaladPageComponent }
 ];
 
 @NgModule({
-  imports: [CommonModule, StoreModule.forFeature('salade', saladeReducer)],
+  imports: [CommonModule,
+    //EffectsModule.forFeature([SaladeEffect]),
+    StoreModule.forFeature('salade', saladeReducer)],
   exports: [
     MySaladeComponent
   ],

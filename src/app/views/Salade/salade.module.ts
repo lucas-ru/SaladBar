@@ -10,6 +10,8 @@ import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
 
 import { SaladePage } from './salade.page';
+import {SaladModule} from "../../StateElement/salade.module";
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import { SaladePage } from './salade.page';
     FormsModule,
     IonicModule,
     SaladePageRoutingModule,
-    StoreModule.forRoot({ salade: saladeReducer })
+    StoreModule.forRoot({ salade: saladeReducer }),
+    SaladModule
   ],
   declarations: [SaladePage]
 })
