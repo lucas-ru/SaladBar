@@ -15,5 +15,12 @@
   </ion-header>
 
   <div id="container" >
+    <app-salade></app-salade>
+      <input #sauce type="text" placeholder="Mettez le nom de la sauce désirée">
+      <button class="btn" (click)="ChangerData(sauce.value)">Changer la sauce</button>
+    <br>
+    <input #nomIng type="text" placeholder="Ajouter un ingrédient">
+    <input #prixIng type="text" placeholder="Prix de l'ingrédient">
+    <button class="btn" (click)="AjouterData(nomIng.value,prixIng.value)">Ajouter un ingrédient</button>
   </div>
 </ion-content>

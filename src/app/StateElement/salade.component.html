@@ -6,8 +6,9 @@
         <span class="badge badge-success">Prix : {{ prix$  }}</span>
       </h3>
       <ul>
+        <span class="badge badge-success">Ingrédients :</span>
         <li *ngFor="let ingredient of ingredients$ ">
-          <span class="badge badge-success">{{ ingredient.name }} : {{ ingredient.price }}$</span>
+          <span class="badge badge-success">{{ ingredient.nom }} : {{ ingredient.prix }}$</span>
         </li>
       </ul>
       <h4>Sauce: {{ sauce$  }}</h4>

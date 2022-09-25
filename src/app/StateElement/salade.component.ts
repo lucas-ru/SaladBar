@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { StartApp } from '../actions/salade.actions';
 import { selectSalade, Salade } from '../reducers/salade.reducer';
@@ -11,10 +11,10 @@ import { selectSalade, Salade } from '../reducers/salade.reducer';
 export class MySaladeComponent {
   salade$: Observable<Salade>;
   nom$: string;
-  prix$: number;
-  ingredients$: Array<{ nom: string; prix: number }>;
+  prix$: string;
+  ingredients$: Array<{ nom: string; prix: string }>;
   sauce$: string;
-  reduction$: number;
+  reduction$: string;
 
   constructor(private store: Store<Salade>) {
   }
@@ -39,18 +39,4 @@ export class MySaladeComponent {
       }
     )
   }
-
-
-
-  /*increment() {
-    this.store.dispatch(increment());
-  }
-
-  decrement() {
-    this.store.dispatch(decrement());
-  }
-
-  reset() {
-    this.store.dispatch(reset());
-  }*/
 }

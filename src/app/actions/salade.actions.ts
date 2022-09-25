@@ -20,7 +20,7 @@ export class StartApp implements Action{
 
 export class AddIng implements Action{
   readonly type = MyActionType.AddIng;
-  constructor(public ing: {nom: string; prix: number}) {
+  constructor(public ing: {nom: string; prix: string}) {
   }
 }
 
@@ -32,7 +32,7 @@ export class ModifySauce implements Action{
 
 export class ModifyPrice {
   readonly type = MyActionType.ModifyPrice;
-  constructor(public prix: number) {
+  constructor(public prix: string) {
   }
 }
 
@@ -44,7 +44,7 @@ export class ModifyName {
 
 export class ModifyReduc {
   readonly type = MyActionType.ModifyReduc;
-  constructor(public reduction: number) {
+  constructor(public reduction: string) {
   }
 }
 

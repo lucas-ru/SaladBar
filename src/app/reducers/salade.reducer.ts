@@ -1,22 +1,22 @@
-import {ActionReducer, createFeatureSelector, createReducer, createSelector} from '@ngrx/store';
+import {ActionReducer, createFeatureSelector, createSelector} from '@ngrx/store';
 import {MyAction, MyActionType} from '../actions/salade.actions';
 
 export interface Salade {
   id: number;
   nom: string;
-  prix: number;
-  ingredients: Array<{nom: string;prix: number}>;
+  prix: string;
+  ingredients: Array<{nom: string;prix: string}>;
   sauce: string;
-  reduction: number;
+  reduction: string;
 }
 
 const initialState: Salade = {
   id: 1,
   nom: 'Printanière',
-  prix: 11.99,
+  prix: '11.99',
   ingredients: [],
   sauce: 'vinaigrette',
-  reduction: 0
+  reduction: '0'
 };
 
 // console.log
@@ -39,30 +39,32 @@ export function saladeReducer(state: Salade = initialState, action: MyAction): S
       return {...initialState};
     case MyActionType.AddIng:
       const ingredients = [...state.ingredients, action.ing];
+      const prixTot = parseFloat(state.prix)  + parseFloat(action.ing.prix)
       return {
         ...state,
         ingredients,
-        prix: state.prix + action.ing.prix
+        prix: prixTot.toString()
       };
     case MyActionType.ModifyName:
       return {
         ...state,
-        nom: state.nom
+        nom: action.nom
       };
     case MyActionType.ModifyPrice:
       return {
         ...state,
-        prix: state.prix
+        prix: action.prix
       };
     case MyActionType.ModifyReduc:
       return {
         ...state,
-        reduction: state.reduction
+        reduction: action.reduction
       };
     case MyActionType.ModifySauce:
+      console.log(state)
       return {
         ...state,
-        sauce: state.sauce
+        sauce : action.sauce
       };
     default:
       return state;
