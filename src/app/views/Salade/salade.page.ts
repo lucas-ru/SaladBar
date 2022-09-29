@@ -31,6 +31,7 @@ export class SaladePage implements OnInit {
   }
 
   public handle(action: any, fn: string): void {
+    document.querySelector('#container').classList.add('container2')
     action[fn]().subscribe((res: boolean) => console.log(fn + ': ' + res));
   }
 

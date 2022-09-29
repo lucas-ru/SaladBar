@@ -19,6 +19,10 @@ ion-content {
   transform: translateY(-50%);
 }
 
+.container2 {
+  height: auto;
+}
+
 #container strong {
   font-size: 20px;
   line-height: 26px;
@@ -47,7 +51,6 @@ ion-content {
   background-color: white;
 }
 
-
 .title {
   font-size: 18px;
 }
@@ -71,4 +74,8 @@ ion-content {
 .titlePage {
   font-size: xx-large;
   margin: 3vh 0 3vh 0;
+}
+
+.space{
+  margin-top: 100px;
 }

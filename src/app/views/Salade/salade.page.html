@@ -15,23 +15,25 @@
   </ion-header>
 
   <div id="container">
+
+    <div class="space"></div>
     <br>
     <h1 class="titlePage">Ma salade</h1>
     <app-salade></app-salade>
     <br>
-    <div class="Sauce">
-      <div class="title">La sauce</div><br>
-      <input class="inputStyle" #sauce type="text" placeholder="Mettez le nom de la sauce désirée">
-      <button class="btn" (click)="ChangerData(sauce.value)">Changer la sauce</button>
-    </div>
-    <div class="Ing">
-      <div>
-        <div class="title">L'ingrédient de votre choix</div><br>
-        <input class="inputStyle" #nomIng type="text" placeholder="Ajouter un ingrédient">
-        <input class="inputStyle" #prixIng type="text" placeholder="Prix de l'ingrédient">
+      <div class="Sauce">
+        <div class="title">La sauce</div><br>
+        <input class="inputStyle" #sauce type="text" placeholder="Mettez le nom de la sauce désirée">
+        <button class="btn" (click)="ChangerData(sauce.value)">Changer la sauce</button>
       </div>
-      <button class="btn" (click)="AjouterData(nomIng.value,prixIng.value)">Ajouter un ingrédient</button>
-    </div>
+      <div class="Ing">
+        <div>
+          <div class="title">L'ingrédient de votre choix</div><br>
+          <input class="inputStyle" #nomIng type="text" placeholder="Ajouter un ingrédient">
+          <input class="inputStyle" #prixIng type="text" placeholder="Prix de l'ingrédient">
+        </div>
+        <button class="btn" (click)="AjouterData(nomIng.value,prixIng.value)">Ajouter un ingrédient</button>
+      </div>
     <div class="scannerQR">
       <ngx-scanner-qrcode #action="scanner" (data)="output = $event"></ngx-scanner-qrcode>
       <button (click)="handle(action, 'toggleCamera')" class="btn" [class.btn-info]="!action.isStart"

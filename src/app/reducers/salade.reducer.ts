@@ -56,7 +56,7 @@ export function saladeReducer(state: Salade = initialState, action: MyAction): S
         prix: action.prix
       };
     case MyActionType.ModifyReduc:
-      const prixAvecReduc = parseFloat(state.prix) * ((parseFloat(action.reduction) / 100) + 1)
+      const prixAvecReduc = parseFloat(state.prix) - ((parseFloat(action.reduction) / 100) * parseFloat(state.prix))
       return {
         ...state,
         reduction: action.reduction + "%",
