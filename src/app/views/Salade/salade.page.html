@@ -14,13 +14,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container" >
+  <div id="container">
     <app-salade></app-salade>
-      <input #sauce type="text" placeholder="Mettez le nom de la sauce désirée">
+    <div class="Sauce">
+      <div class="title">La sauce</div><br>
+      <input class="inputStyle" #sauce type="text" placeholder="Mettez le nom de la sauce désirée">
       <button class="btn" (click)="ChangerData(sauce.value)">Changer la sauce</button>
+    </div>
     <br>
-    <input #nomIng type="text" placeholder="Ajouter un ingrédient">
-    <input #prixIng type="text" placeholder="Prix de l'ingrédient">
-    <button class="btn" (click)="AjouterData(nomIng.value,prixIng.value)">Ajouter un ingrédient</button>
+    <div class="Ing">
+      <div>
+        <div class="title">L'ingrédient de votre choix</div><br>
+        <input class="inputStyle" #nomIng type="text" placeholder="Ajouter un ingrédient">
+        <input class="inputStyle" #prixIng type="text" placeholder="Prix de l'ingrédient">
+      </div>
+      <button class="btn" (click)="AjouterData(nomIng.value,prixIng.value)">Ajouter un ingrédient</button>
+    </div>
   </div>
 </ion-content>

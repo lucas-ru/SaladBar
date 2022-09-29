@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { StartApp } from '../actions/salade.actions';
 import { selectSalade, Salade } from '../reducers/salade.reducer';
@@ -7,6 +7,7 @@ import { selectSalade, Salade } from '../reducers/salade.reducer';
 @Component({
   selector: 'app-salade',
   templateUrl: './salade.component.html',
+  styleUrls: ['./saladeState.page.scss'],
 })
 export class MySaladeComponent {
   salade$: Observable<Salade>;

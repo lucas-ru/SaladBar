@@ -14,16 +14,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container" >
+  <div id="container">
     <ngx-scanner-qrcode class="scannerQR" #action="scanner" (data)="output = $event">
     </ngx-scanner-qrcode>
-    <button (click)="handle(action, 'toggleCamera')" class="btn" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart" [disabled]="action.isLoading">
-      <img *ngIf="!action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v2.png" width="30px"/>
-      <img *ngIf="action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v1.png" width="30px"/>
+    <button (click)="handle(action, 'toggleCamera')" class="btn" [class.btn-info]="!action.isStart"
+      [class.btn-warning]="action.isStart" [disabled]="action.isLoading">
+      <img *ngIf="!action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v2.png" width="30px" />
+      <img *ngIf="action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v1.png" width="30px" />
     </button>
-    <div>
+    <div class="containerItem">
       <span class="output">code detecté : {{output}}</span>
-    <button (click)="sendQr()">utiliser le code de réduction</button>
+    </div>
+    <div class="containerItem ">
+      <button class="buttonSend" (click)="sendQr()">utiliser le code de réduction</button>
     </div>
   </div>
 </ion-content>

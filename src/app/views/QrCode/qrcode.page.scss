@@ -27,11 +27,17 @@ ion-menu-button {
   text-decoration: none;
 }
 
-.output{
-  opacity: 1;
+.containerItem {
+  margin: 5px;
+  text-align: center;
 }
 
-.scannerQR{
+.scannerQR {
   width: 100%;
   height: auto;
+}
+
+.buttonSend {
+  font-weight: bold;
+  text-decoration: underline;
 }

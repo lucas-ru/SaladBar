@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h1>Nom: {{ nom$ }}</h1>
+      <h1><u>Nom:</u> {{ nom$ }}</h1>
       <h3>
-        <span class="badge badge-success">Prix : {{ prix$  }}</span>
+        <span class="badge badge-success"><u>Prix :</u> {{ prix$ }}</span>
       </h3>
-      <ul>
-        <span class="badge badge-success">Ingrédients :</span>
+      <ul class="list">
+        <span class="badge badge-success"><u>Ingrédients :</u></span>
         <li *ngFor="let ingredient of ingredients$ ">
           <span class="badge badge-success">{{ ingredient.nom }} : {{ ingredient.prix }}$</span>
         </li>
       </ul>
-      <h4>Sauce: {{ sauce$  }}</h4>
-      <h4>Reduction: {{ reduction$  }}</h4>
+      <h4><u>Sauce:</u> {{ sauce$ }}</h4>
+      <h4><u>Reduction:</u> {{ reduction$ }}</h4>
     </div>
     <div>
       {{ salade$ }}

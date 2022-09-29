@@ -26,3 +26,24 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+
+.inputStyle {
+  margin: 0 5px 0 5px;
+}
+
+.Sauce,
+.Ing {
+  border: 1px red solid;
+  padding: 2vh 4vw 2vh 4vw;
+  margin: 0 15vw 0 15vw;
+}
+
+
+.title {
+  font-size: 18px;
+}
+
+.btn {
+  font-weight: bold;
+  text-decoration: underline;
+}
