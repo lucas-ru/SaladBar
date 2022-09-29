@@ -56,12 +56,13 @@ export function saladeReducer(state: Salade = initialState, action: MyAction): S
         prix: action.prix
       };
     case MyActionType.ModifyReduc:
+      const prixAvecReduc = parseFloat(state.prix) * ((parseFloat(action.reduction)/100)+1)
       return {
         ...state,
-        reduction: action.reduction
+        reduction: action.reduction + "%",
+        prix : prixAvecReduc.toString()
       };
     case MyActionType.ModifySauce:
-      console.log(state)
       return {
         ...state,
         sauce : action.sauce

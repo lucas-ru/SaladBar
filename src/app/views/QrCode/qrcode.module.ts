@@ -11,6 +11,8 @@ import { StoreModule } from '@ngrx/store';
 import { saladeReducer } from '../../reducers/salade.reducer';
 
 import { QrCodePage } from './qrcode.page';
+import {SaladModule} from "../../StateElement/salade.module";
+
 
 @NgModule({
   imports: [
@@ -19,7 +21,8 @@ import { QrCodePage } from './qrcode.page';
     IonicModule,
     QrCodePageRoutingModule,
     NgxScannerQrcodeModule,
-    StoreModule.forRoot({ salade: saladeReducer })
+    StoreModule.forRoot({ salade: saladeReducer }),
+    SaladModule
   ],
   declarations: [QrCodePage]
 })
