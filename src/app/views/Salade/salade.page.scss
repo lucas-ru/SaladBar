@@ -2,6 +2,14 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
+ion-toolbar {
+  --background: rgba(var(--ion-color-primary-rgb), 0.5);
+}
+
+ion-content {
+  --background: rgba(var(--ion-color-primary-rgb), 0.4);
+}
+
 #container {
   text-align: center;
   position: absolute;
@@ -34,9 +42,9 @@ ion-menu-button {
 .Sauce,
 .Ing,
 .scannerQR {
-  border: 1px red solid;
   padding: 2vh 4vw 2vh 4vw;
   margin: 0 15vw 2vh 15vw;
+  background-color: white;
 }
 
 
@@ -58,4 +66,9 @@ ion-menu-button {
 .buttonSend {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.titlePage {
+  font-size: xx-large;
+  margin: 3vh 0 3vh 0;
 }
