@@ -4,11 +4,11 @@ import { Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { MySaladeComponent } from './salade.component';
 import { saladeReducer } from '../reducers/salade.reducer';
-import {EffectsModule} from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 //import { SaladeEffect } from '../StateElement/salade.effect';
 
 const routes: Routes = [
-  // { path: 'order', component: SaladPageComponent }
+  { path: '/', component: MySaladeComponent }
 ];
 
 @NgModule({
@@ -20,4 +20,4 @@ const routes: Routes = [
   ],
   declarations: [MySaladeComponent]
 })
-export class SaladModule {}
+export class SaladModule { }

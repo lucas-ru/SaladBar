@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -10,7 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 export class AccueilPage implements OnInit {
 
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, public cd: ChangeDetectorRef) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cd.detectChanges();
+  }
 }

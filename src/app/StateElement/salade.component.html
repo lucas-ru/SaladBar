@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h1><u>Nom:</u> {{ nom$ }}</h1>
+      <h1><u>Nom:</u> {{ nom$ | async }}</h1>
       <h3>
-        <span class="badge badge-success"><u>Prix :</u> {{ prix$ }}</span>
+        <span class="badge badge-success"><u>Prix :</u> {{ prix$ | async }}</span>
       </h3>
       <ul class="list">
         <span class="badge badge-success"><u>Ingrédients :</u></span>
@@ -11,12 +11,11 @@
           <span class="badge badge-success">{{ ingredient.nom }} : {{ ingredient.prix }}$</span>
         </li>
       </ul>
-      <h4><u>Sauce:</u> {{ sauce$ }}</h4>
-      <h4><u>Reduction:</u> {{ reduction$ }}</h4>
+      <h4><u>Sauce:</u> {{ sauce$ | async }}</h4>
+      <h4><u>Reduction:</u> {{ reduction$ | async }}</h4>
     </div>
     <div>
       {{ salade$ }}
     </div>
-    <hr />
   </div>
 </div>

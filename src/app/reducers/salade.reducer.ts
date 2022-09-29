@@ -1,11 +1,11 @@
-import {ActionReducer, createFeatureSelector, createSelector} from '@ngrx/store';
-import {MyAction, MyActionType} from '../actions/salade.actions';
+import { ActionReducer, createFeatureSelector, createSelector } from '@ngrx/store';
+import { MyAction, MyActionType } from '../actions/salade.actions';
 
 export interface Salade {
   id: number;
   nom: string;
   prix: string;
-  ingredients: Array<{nom: string;prix: string}>;
+  ingredients: Array<{ nom: string; prix: string }>;
   sauce: string;
   reduction: string;
 }
@@ -34,12 +34,12 @@ export function logger(reducer: ActionReducer<Salade>): ActionReducer<Salade> {
 }
 
 export function saladeReducer(state: Salade = initialState, action: MyAction): Salade {
-  switch (action.type){
+  switch (action.type) {
     case MyActionType.StartApp:
-      return {...initialState};
+      return { ...state };
     case MyActionType.AddIng:
       const ingredients = [...state.ingredients, action.ing];
-      const prixTot = parseFloat(state.prix)  + parseFloat(action.ing.prix)
+      const prixTot = parseFloat(state.prix) + parseFloat(action.ing.prix)
       return {
         ...state,
         ingredients,
@@ -56,16 +56,16 @@ export function saladeReducer(state: Salade = initialState, action: MyAction): S
         prix: action.prix
       };
     case MyActionType.ModifyReduc:
-      const prixAvecReduc = parseFloat(state.prix) * ((parseFloat(action.reduction)/100)+1)
+      const prixAvecReduc = parseFloat(state.prix) * ((parseFloat(action.reduction) / 100) + 1)
       return {
         ...state,
         reduction: action.reduction + "%",
-        prix : prixAvecReduc.toString()
+        prix: prixAvecReduc.toString()
       };
     case MyActionType.ModifySauce:
       return {
         ...state,
-        sauce : action.sauce
+        sauce: action.sauce
       };
     default:
       return state;
@@ -79,8 +79,34 @@ export function saladeReducer(state: Salade = initialState, action: MyAction): S
 export const selectFeature = createFeatureSelector<Salade>('salade');
 export const selectSalade = createSelector(
   selectFeature,
-  (salade) => {
-    console.log(salade)
-    return salade
+  (state: Salade) => {
+    return state
   }
 );
+
+export const selectNom = createSelector(
+  selectFeature,
+  (state: Salade) => state.nom
+)
+
+
+export const selectPrix = createSelector(
+  selectFeature,
+  (state: Salade) => state.prix
+)
+
+export const selectIng = createSelector(
+  selectFeature,
+  (state: Salade) => state.ingredients
+
+)
+
+export const selectSauce = createSelector(
+  selectFeature,
+  (state: Salade) => state.sauce
+)
+
+export const selectReduc = createSelector(
+  selectFeature,
+  (state: Salade) => state.reduction
+)

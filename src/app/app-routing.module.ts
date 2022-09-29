@@ -10,19 +10,15 @@ const routes: Routes = [
   },
   {
     path: 'Accueil',
-    loadChildren: () => import('./views/Accueil/accueil.module').then( m => m.AccueilPageModule)
+    loadChildren: () => import('./views/Accueil/accueil.module').then(m => m.AccueilPageModule)
   },
   {
     path: 'Panier',
-    loadChildren: () => import('./views/Panier/panier.module').then( m => m.PanierPageModule)
-  },
-  {
-    path: 'QrCode',
-    loadChildren: () => import('./views/QrCode/qrcode.module').then( m => m.QrCodePageModule)
+    loadChildren: () => import('./views/Panier/panier.module').then(m => m.PanierPageModule)
   },
   {
     path: 'Salade',
-    loadChildren: () => import('./views/Salade/salade.module').then( m => m.SaladePageModule)
+    loadChildren: () => import('./views/Salade/salade.module').then(m => m.SaladePageModule)
   }
 ];
 
@@ -32,4 +28,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

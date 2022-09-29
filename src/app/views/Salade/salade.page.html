@@ -21,7 +21,6 @@
       <input class="inputStyle" #sauce type="text" placeholder="Mettez le nom de la sauce désirée">
       <button class="btn" (click)="ChangerData(sauce.value)">Changer la sauce</button>
     </div>
-    <br>
     <div class="Ing">
       <div>
         <div class="title">L'ingrédient de votre choix</div><br>
@@ -29,6 +28,20 @@
         <input class="inputStyle" #prixIng type="text" placeholder="Prix de l'ingrédient">
       </div>
       <button class="btn" (click)="AjouterData(nomIng.value,prixIng.value)">Ajouter un ingrédient</button>
+    </div>
+    <div class="scannerQR">
+      <ngx-scanner-qrcode #action="scanner" (data)="output = $event"></ngx-scanner-qrcode>
+      <button (click)="handle(action, 'toggleCamera')" class="btn" [class.btn-info]="!action.isStart"
+        [class.btn-warning]="action.isStart" [disabled]="action.isLoading">
+        <img *ngIf="!action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v2.png" width="30px" />
+        <img *ngIf="action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v1.png" width="30px" />
+      </button>
+      <div class="containerItem">
+        <span class="output">code detecté : {{output}}</span>
+      </div>
+      <div class="containerItem ">
+        <button class="buttonSend" (click)="sendQr()">utiliser le code de réduction</button>
+      </div>
     </div>
   </div>
 </ion-content>

@@ -32,10 +32,11 @@ ion-menu-button {
 }
 
 .Sauce,
-.Ing {
+.Ing,
+.scannerQR {
   border: 1px red solid;
   padding: 2vh 4vw 2vh 4vw;
-  margin: 0 15vw 0 15vw;
+  margin: 0 15vw 2vh 15vw;
 }
 
 
@@ -44,6 +45,17 @@ ion-menu-button {
 }
 
 .btn {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.containerItem {
+  margin: 5px;
+  text-align: center;
+}
+
+.buttonSend {
   font-weight: bold;
   text-decoration: underline;
 }
